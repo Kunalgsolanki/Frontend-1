@@ -5,6 +5,31 @@ import { purple } from '@mui/material/colors';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements,
+  Route
+} from "react-router-dom";
+import SignUp from './Authentication/Signin/SignUp';
+const router = createBrowserRouter(
+
+  createRoutesFromElements(
+
+    <>
+    <Route path='/' element={<App />} /><Route path='/SignUp' element={<SignUp />} />
+    
+    </>
+
+    
+
+    
+  )
+
+  
+);
+//  for add react-router requirement 
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -21,7 +46,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-       <App />
+   
+      
+    <RouterProvider router={router} />
+       
+       
     </ThemeProvider>
   </React.StrictMode>
 );

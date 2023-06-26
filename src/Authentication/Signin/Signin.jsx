@@ -13,7 +13,9 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Logo from "../../assets/Image/logo.png"
-import Bg from "../../assets/Image/bg.png"
+import {  Link as Link1 } from "react-router-dom";
+
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -42,6 +44,7 @@ export default function SignInSide() {
   };
 
   return (
+    <React.Fragment>
     <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
@@ -51,11 +54,11 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random?wallpapers)',
+            backgroundImage: 'url(https://i.ytimg.com/vi/RX4mabqF2mI/maxresdefault.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
+            backgroundSize: 'fit',
             backgroundPosition: 'center',
           }}
         />
@@ -130,8 +133,14 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link  variant="body2">
+
+                    <Link1 to="/SignUp">
+                    
+                   
                     {"Don't have an account? Sign Up"}
+                    </Link1>
+                  
                   </Link>
                 </Grid>
               </Grid>
@@ -141,5 +150,6 @@ export default function SignInSide() {
         </Grid>
       </Grid>
     </ThemeProvider>
+    </React.Fragment>
   );
 }
